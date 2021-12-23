@@ -1,0 +1,12 @@
+@import '../utils/theme.scss';
+
+h1 {
+    font-weight: 500;
+    font-family: $family-primary;
+    font-size: 1.25rem;
+}
+
+p {
+    font-weight:400;
+    font-family: $family-secondary;
+}

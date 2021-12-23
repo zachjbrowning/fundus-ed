@@ -1,0 +1,49 @@
+// ==== Fonts ==== //
+
+
+// ==== Colors ==== //
+$primary: #4E8B61;
+$primary-light: #8ABC94;
+$secondary: #9381FF;
+$secondary-light: #BEADFF;
+$tertiary: #ff7bac;
+$tertiary-light: #FFADCB;
+$quaternary: #45AFD9;
+$quaternary-light: #88CCE7;
+$tree-trunk: #95785F;
+$background: #f8f8f8;
+$background-fade: #f8f8f8aa;
+$dark: #111111;
+$grey: #c0c0c0;
+$grey-fade: #c0c0c044;
+
+
+// ==== Bulma globals ==== //
+$info: $secondary;
+$link: $primary;
+$body-background-color: $background;
+$body-color: $dark;
+$family-primary: "Montserrat Alternates";
+$family-secondary: "Roboto";
+$body-family: "Roboto";
+
+// ==== Mixins ==== //
+
+@mixin accented {
+    text-decoration: underline;
+    text-decoration-color: $primary;
+}
+
+
+
+@mixin colour-invert {
+    background-color: $primary;
+    color:$background;
+    h2 {
+        text-decoration-color: $primary-light !important;
+    }
+    h1 {
+        text-decoration-color: $secondary-light;
+    }
+}
+

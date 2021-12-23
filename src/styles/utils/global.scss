@@ -1,0 +1,27 @@
+@import "./theme.scss";
+
+body {
+    scroll-behavior: smooth;
+    background-color: $background;
+}
+
+.sub-header {
+    color:$primary;
+    font-weight:600;
+    font-family: $family-primary;
+}
+
+.is-primary {
+    color: $primary
+}
+.is-secondary {
+    color: $secondary
+}
+.colour-inverted {
+    @include colour-invert;
+}
+
+svg {
+    width:100%;
+    height:100%;
+}

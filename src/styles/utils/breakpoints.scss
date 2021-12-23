@@ -1,0 +1,22 @@
+
+$max-width: 1000px;
+$breakpoint-large: 1200px;
+
+$breakpoint-medium: 1000px;
+
+$breakpoint-small: 800px;
+
+$breakpoint-mobile: 550px;
+
+@mixin standard-breakpoints {
+    margin: 0 auto;
+    @media (min-width: $breakpoint-small) {
+        width: $breakpoint-small;
+    }
+    @media (min-width: $breakpoint-medium) {
+        width: $breakpoint-medium;
+    }
+    @media (min-width: $breakpoint-large) {
+        width: $max-width;
+    }
+}

@@ -1,0 +1,27 @@
+@import "../../../node_modules/bulma/sass/form/shared.sass";
+@import "../../../node_modules/bulma/sass/form/tools.sass";
+@import "../../../node_modules/bulma/sass/form/input-textarea.sass";
+@import "../utils/breakpoints.scss";
+
+.input, .select select, .textarea {
+    border-radius: 0px;
+    &[disabled] {
+        border-color:#dbdbdb;
+    }
+}
+label {
+    font-weight: 500 !important;
+}
+.horizontal-fields {
+    @media (min-width: $breakpoint-mobile) {
+        display:flex;
+        justify-content: space-between;
+        & > div {
+            flex-basis: 0;
+            flex-grow: 1;
+            &:not(:last-child) {
+                margin-right:0.75rem;
+            }
+        }
+    }
+}
