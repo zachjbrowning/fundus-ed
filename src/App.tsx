@@ -10,12 +10,13 @@ import { routes } from './constants/routes';
 import "./styles/index.scss"
 import "./App.scss"
 import CheatsheetRoute from './components/routes/CheatsheetRoute/CheatsheetRoute';
+import FloatingNav from './components/shared/FloatingNav/FloatingNav';
 
 export default function App() {
     return <BrowserRouter>
         <Routes>
             <Route path={routes.LANDING_ROUTE} element={<div />} />
-            <Route path={"*"} element={<Nav />} />
+            <Route path={"*"} element={<FloatingNav />} />
         </Routes>
         <Routes>
             <Route path={routes.LANDING_ROUTE} element={<LandingRoute />} />
