@@ -1,0 +1,19 @@
+@import "../../../styles/utils/theme.scss";
+
+#nav {
+    background-color: $background;
+    z-index: 2;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:40px;
+    display:flex;
+    justify-content: space-between;
+    padding: 3px;
+    border-bottom: 2px solid $primary;
+    .nav-brand {
+        cursor: pointer;
+    }
+}

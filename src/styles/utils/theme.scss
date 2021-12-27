@@ -1,11 +1,14 @@
 // ==== Fonts ==== //
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates:wght@400;500&family=Roboto&display=swap');
 
+$font-primary-serif: "Montserrat";
+$font-primary-sans-serif: "Montserrat Alternates";
 
 // ==== Colors ==== //
-$primary: #4E8B61;
-$primary-light: #8ABC94;
-$secondary: #9381FF;
-$secondary-light: #BEADFF;
+$primary: #cc7e09;
+$primary-light: #fcd580;
+$secondary: #342c5f;
+$secondary-light: #60558a;
 $tertiary: #ff7bac;
 $tertiary-light: #FFADCB;
 $quaternary: #45AFD9;

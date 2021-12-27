@@ -4,7 +4,7 @@ import './ManagementRoute.scss';
 
 export default function ManagementRoute() {
 
-    return <div>
+    return <div className="management-route">
         Management
     </div>
 }

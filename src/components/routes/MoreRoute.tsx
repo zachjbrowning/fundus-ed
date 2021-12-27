@@ -2,9 +2,11 @@ import React from 'react';
 
 import './MoreRoute.scss';
 
-export default function MoreRoute() {
+export const MoreRoute = () => {
 
-    return <div>
+    return <div className="more-route">
         MORE
     </div>
 }
+
+export default MoreRoute;

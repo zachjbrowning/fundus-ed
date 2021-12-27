@@ -1,0 +1,16 @@
+#cheatsheet-route {
+
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+.cheatsheet-select {
+    position:absolute;
+    top:40px;
+    left:0;
+    right:0;
+    width:100%;
+    display: flex;
+    justify-content: center;
+}

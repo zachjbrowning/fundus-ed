@@ -4,7 +4,7 @@ import './ErrorRoute.scss';
 
 export default function ErrorRoute() {
 
-    return <div>
+    return <div className="error-route">
         UH OH xx
     </div>
 }
