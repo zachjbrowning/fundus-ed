@@ -1,6 +1,6 @@
 export enum routes {
     LANDING_ROUTE = "/",
     CHEATSHEET_ROUTE = "/cheatsheet",
-    MANGEMENT_ROUTE = "/mangement",
+    TUTORIAL_ROUTE = "/tutorial",
     MORE_ROUTE = '/more'
 }

@@ -7,7 +7,7 @@ export enum FUNDI {
     dead = "DEAD"
 }
 
-interface img {
+export interface img {
     src: string;
     alt: string;
 }

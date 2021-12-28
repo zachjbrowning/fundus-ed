@@ -5,19 +5,13 @@ import FloatingNavMenu from './FloatingNavMenu';
 
 export const FloatingNav = () => {
     const [open, setOpen] = useState(false);
-    const [quadrant, setQuadrant] = useState(0);
 
     const handleStop = (e: TouchEvent) => {
         var box = document.getElementById("floating-nav");
-        var width = document.body.clientWidth;
-        var height = document.body.clientHeight;
-        let left = parseInt(box.style.left) + (box.clientWidth / 2) < width / 2;
-        let top = parseInt(box.style.top) + (box.clientHeight / 2) < height / 2; 
-        box.style.left = (left ? 0 : width - box.clientWidth) + 'px';
-        box.style.top = (top ? 0 : height - box.clientHeight) + 'px';
-        setQuadrant(left && top ? 0 : 
-            top ? 1 : 
-            left ? 2 : 3)
+        box.style.bottom = '0';
+        box.style.right = '0';
+        box.style.top = 'initial';
+        box.style.left = 'initial';
     }
 
     const handleMove = (e: TouchEvent) => {
@@ -26,7 +20,6 @@ export const FloatingNav = () => {
         var touchLocation = e.targetTouches[0];
         box.style.left = touchLocation.pageX - (box.clientWidth / 2) + 'px';
         box.style.top = touchLocation.pageY - (box.clientHeight / 2) + 'px';
-    
     }
 
     useEffect(() => {
@@ -41,11 +34,21 @@ export const FloatingNav = () => {
 
 
     return <>
-        <div id="floating-nav">
+        <div id="floating-nav" className={open ?  "is-open" : ""}>
             <div id="floating-nav-button" onClick={() => setOpen(!open)}>
-                +
+                <div>
+                    {
+                        open ? <svg className="closer" viewBox="0 0 14 14">
+                            <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" />
+                        </svg>
+                        : <svg className="opener" viewBox="0 0 30 30">
+                            <path d='M4 7h22M4 15h22M4 23h22'/>
+                        </svg>
+                    }
+                    
+                </div>
             </div>
-            { open && <FloatingNavMenu setClose={() => setOpen(false)} quadrant={quadrant} /> }
+            { open && <FloatingNavMenu setClose={() => setOpen(false)} /> }
         </div>
     </>
 }

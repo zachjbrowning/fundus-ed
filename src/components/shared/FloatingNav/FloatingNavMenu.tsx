@@ -9,7 +9,6 @@ import { RootState } from '../../../redux/reducers';
 import './FloatingNavMenu.scss';
 
 interface props {
-    quadrant: number;
     setClose: () => void;
 }
 
@@ -29,7 +28,7 @@ export const FloatingNavMenu = (props: props) => {
     }
 
 
-    return <div id="floating-nav-menu" className={`quadrant-${props.quadrant}`}>
+    return <div id="floating-nav-menu" >
         <button onClick={() => navigate(routes.LANDING_ROUTE)} className="button is-primary">Home</button>
 
         <select id="cheatsheet-selector" onChange={handleChange}>

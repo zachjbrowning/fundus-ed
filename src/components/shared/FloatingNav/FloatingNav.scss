@@ -3,20 +3,41 @@
     position:absolute;
     width:50px;
     height:50px;
-    top:0;
-    left:0;
+    bottom:0;
+    right:0;
     z-index: 10;
-    padding:4px;
+    padding:2px;
     #floating-nav-button {
-        position:relative;
-        background-color: $primary;
-        border-radius: 10px;
+        border:4px solid #00000000;;
+        background-color: #00000000;
+        &:hover, &.is-open {
+            background-color: $primary-light;
+            border-color: $primary-light;
+        }
         width:100%;
         height:100%;
-        color: $background;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 30px;
+        border-radius: 10px;
+        & > div {
+            background-color: $primary;
+            width:100%;
+            height:100%;
+            border-radius: 6px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            svg {
+                width:60%;
+                height:60%;
+                fill:$background;
+                stroke:$background;
+                &.opener {
+                    stroke-width: 3;
+                }
+                &.closer {
+                    stroke-width: 0;
+                }
+            }
+        }
     }
 }
