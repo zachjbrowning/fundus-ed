@@ -1,39 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FUNDI } from '../../../constants/fundi/fundi';
+import { setCurrentFundus } from '../../../redux/actions/fundusActions';
+import { RootState } from '../../../redux/reducers';
 
 import './CheatsheetRoute.scss';
 import FundusTile from './FundusTile/FundusTile';
 
 export default function CheatsheetRoute() {
-    const [tile, setTile] = useState(0);
+    const fundus = useSelector((state: RootState) => state.fundus)
+    const dispatch = useDispatch();
 
-    let fundii = Object.values(FUNDI);
+    let fundi = Object.values(FUNDI);
 
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        let index = fundii.indexOf(e.target.value as FUNDI);
-        let el = document.getElementById(`fundus-tile-${index}`);
-        el.scrollIntoView();
-    }
+    useEffect(() => {
+        let box = document.getElementById("cheatsheet-route");
+        let tile = Math.floor((box.scrollTop + 0.5) / (box.scrollHeight / fundi.length));
+        if (fundi[tile] !== fundus) {
+            document.getElementById(`fundus-tile-${fundi.indexOf(fundus)}`).scrollIntoView(); 
+        }
+    }, [fundus])
 
     const handleScroll = (e: React.UIEvent<HTMLElement, UIEvent>) => {
         let offset = e.currentTarget.scrollTop;
-        let pageHeight = e.currentTarget.scrollHeight / fundii.length;
-        let section = Math.floor((offset + 0.5) / pageHeight);
-        if (section !== tile) {
-            setTile(section);
-            (document.getElementById("cheatsheet-selector") as HTMLSelectElement).value = fundii[section];
+        let pageHeight = e.currentTarget.scrollHeight / fundi.length;
+        let tile = fundi[Math.floor((offset + 0.5) / pageHeight)];
+        if (tile !== fundus) {
+            dispatch(setCurrentFundus(tile));
         }
     }
 
     return <>
-        <div className='cheatsheet-select'>
-            <select id="cheatsheet-selector" onChange={handleChange}>
-                {fundii.map((v, i) => <option key={i}>{v}</option>)}
-            </select>
-        </div>
-
         <div id="cheatsheet-route" onScroll={handleScroll}>
-            {fundii.map((v, i) => <FundusTile key={i} id={i} fundus={v} />)}
+            {fundi.map((v, i) => <FundusTile key={i} id={i} fundus={v} />)}
         </div>
     </>
 }

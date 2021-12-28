@@ -44,8 +44,8 @@ export const FloatingNav = () => {
         <div id="floating-nav">
             <div id="floating-nav-button" onClick={() => setOpen(!open)}>
                 +
-                { open && <FloatingNavMenu quadrant={quadrant} /> }
             </div>
+            { open && <FloatingNavMenu setClose={() => setOpen(false)} quadrant={quadrant} /> }
         </div>
     </>
 }

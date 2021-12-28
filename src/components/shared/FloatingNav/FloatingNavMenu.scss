@@ -1,6 +1,10 @@
 @import "../../../styles/utils/theme.scss";
 
 #floating-nav-menu {
+    & > div, & > button, & > select {
+        margin: 4px;
+    }
+    padding:1rem;
     position:absolute;
     background-color: $primary-light;
     border-radius: 6px;
