@@ -20,7 +20,7 @@ export const LandingTile = (props: TileProps) => {
             <img src={props.img.src} alt={props.img.alt} />
         </div>
         <div className="landing-tile-words">
-            <h1 className="header is-primary">{props.title}</h1>
+            <h1 className="header is-secondary">{props.title}</h1>
             <p>{props.msg}</p>
         </div>
     </div>

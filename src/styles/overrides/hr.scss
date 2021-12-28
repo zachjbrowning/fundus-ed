@@ -1,5 +1,6 @@
 @import '../utils/theme.scss';
 hr {
+    width:100%;
     background-color:$primary;
     &.colour-inverted {
         background-color: transparent;

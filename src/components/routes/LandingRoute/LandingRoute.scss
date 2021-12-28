@@ -1,9 +1,14 @@
 .landing-route {
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: start;
     align-items: center;
     width:100%;
     min-height:100vh;
     padding:10px;
+    &-title {
+        padding: 1rem 0;
+    }
+    &-tiles {
+    }
 }

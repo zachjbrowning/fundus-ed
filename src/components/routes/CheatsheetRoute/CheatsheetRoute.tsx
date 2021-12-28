@@ -5,11 +5,13 @@ import { setCurrentFundus } from '../../../redux/actions/fundusActions';
 import { RootState } from '../../../redux/reducers';
 
 import './CheatsheetRoute.scss';
+import FundusPage from './FundusPage/FundusPage';
 import FundusTile from './FundusTile/FundusTile';
 
 export default function CheatsheetRoute() {
     const fundus = useSelector((state: RootState) => state.fundus)
     const dispatch = useDispatch();
+    const [pageOpen, setPageOpen] = useState(false);
 
     let fundi = Object.values(FUNDI);
 
@@ -22,6 +24,7 @@ export default function CheatsheetRoute() {
     }, [fundus])
 
     const handleScroll = (e: React.UIEvent<HTMLElement, UIEvent>) => {
+        if (open) return;
         let offset = e.currentTarget.scrollTop;
         let pageHeight = e.currentTarget.scrollHeight / fundi.length;
         let tile = fundi[Math.floor((offset + 0.5) / pageHeight)];
@@ -30,9 +33,15 @@ export default function CheatsheetRoute() {
         }
     }
 
+    const openPage = (i: number) => {
+        if (fundi[i] !== fundus) dispatch(setCurrentFundus(fundi[i]));
+        setPageOpen(true);
+    }
+
     return <>
         <div id="cheatsheet-route" onScroll={handleScroll}>
-            {fundi.map((v, i) => <FundusTile key={i} id={i} fundus={v} />)}
+            {fundi.map((v, i) => <FundusTile openPage={() => openPage(i)} key={i} id={i} fundus={v} />)}
         </div>
+        { pageOpen && <FundusPage closePage={() => setPageOpen(false)} />}
     </>
 }

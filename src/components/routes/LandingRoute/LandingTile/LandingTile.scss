@@ -1,10 +1,11 @@
 .landing-tile {
     display:flex;
     cursor:pointer;
-    .landing-tile-img {
+    &-img {
         width:40px;
         display: flex;
         align-items: center;
         margin:5px;
     }
+    margin: 1.5rem 0;
 }

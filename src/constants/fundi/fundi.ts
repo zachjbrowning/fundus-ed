@@ -1,9 +1,9 @@
-import { badConfig, deadConfig, normalConfig, worseConfig } from "./configs";
+import { deadConfig, normalConfig, papConfig, retConfig } from "./configs";
 
 export enum FUNDI {
     normal = "NORMAL",
-    bad = "BAD",
-    worse = "WORSE",
+    pap = "PAP",
+    ret = "RET",
     dead = "DEAD"
 }
 
@@ -14,16 +14,17 @@ export interface img {
 
 export interface FundiConfig {
     name: string;
-    img: img;
+    imgs: img[];
     management: string;
+    description: string;
 }
 
 export const fundiConfigs: {
     [F in FUNDI] : FundiConfig
 } = {
     NORMAL: normalConfig,
-    BAD: badConfig,
-    WORSE: worseConfig,
+    PAP: papConfig,
+    RET: retConfig,
     DEAD: deadConfig
 }
 

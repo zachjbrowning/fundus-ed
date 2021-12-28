@@ -1,0 +1,48 @@
+@import "../../../styles/utils/theme.scss";
+.carousel {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    overflow: hidden;
+    height:100%;
+}
+.carousel-body {
+    width:100%;
+    display:flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width:none;
+    &::-webkit-scrollbar {
+        display:none;
+    }
+}
+.carousel-slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width:100%;
+    height:100%;
+    background: $grey-fade;
+    justify-content: center;
+    display: flex;
+}
+.carousel-dots {
+
+    display:flex;
+    justify-content: center;
+    svg {
+        margin:3px;
+        width:10px;
+        fill:$grey;
+        transition: all 0.3s ease-in-out;
+        &.is-active {
+            fill: $secondary;
+            transform: scale(1.3);
+        }
+        &:hover {
+            cursor: pointer;
+            fill:$secondary-light;
+            transform: scale(1.3);
+        }
+    }
+}

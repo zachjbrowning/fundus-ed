@@ -1,0 +1,22 @@
+@import "../../../../styles/utils/theme.scss";
+.fundus-page {
+    position:absolute;
+    padding: 0.5rem;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:100vh;
+    background-color: $background;
+    overflow: scroll;
+}
+.fundus-page-closer {
+    margin: 1rem;
+    position:absolute;
+    top: 0;
+    right: 0;
+    width:2rem;
+    height:2rem;
+    stroke: $primary;
+    fill: $primary;
+}

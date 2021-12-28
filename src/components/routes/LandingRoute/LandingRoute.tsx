@@ -37,8 +37,13 @@ const tiles: TileProps[] = [
 ]
 
 export default function LandingRoute() {
-    let navigate = useNavigate();
     return <div className="landing-route">
-        {tiles.map((v, i) => <LandingTile key={i} title={v.title} msg={v.msg} img={v.img} route={v.route} />)}
+        <div className="landing-route-title">
+            <h1 className="header is-primary">Welcome tooo Fun-Dus</h1>
+        </div>
+        <hr />
+        <div className="landing-route-tiles">
+            {tiles.map((v, i) => <LandingTile key={i} title={v.title} msg={v.msg} img={v.img} route={v.route} />)}
+        </div>
     </div>
 }

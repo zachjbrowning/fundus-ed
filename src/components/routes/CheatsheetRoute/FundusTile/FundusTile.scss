@@ -1,26 +1,36 @@
 @import "../../../../styles/utils/theme.scss";
 
 .fundus-tile {
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     border: 1px solid $primary-light;
     scroll-snap-align: center;
     &-title {
-        margin-top:15px;
+        height:10%;
+        display:flex;
+        width:100%;
     }
     &-img {
-        max-height:50%;
+        height:60%;
         img {
-            width:100%;
             height:100%;
             display:flex;
         }
     }
-    & > div {
-        padding: 3px 0;
+    &-info {
+        div {
+            width:100%;
+            display:flex;
+            justify-content: center;
+        }
+        height:30%;
+        p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical; 
+            overflow: hidden;
+        }
     }
-
+    & > div {
+        padding: 1rem;
+    }
 }

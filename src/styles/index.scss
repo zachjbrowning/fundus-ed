@@ -19,6 +19,9 @@
 @import "./overrides/modal.scss";
 @import "./overrides/form.scss";
 
+// Plain components
+@import "../../node_modules/bulma/sass/components/tabs.sass";
+
 // Overriden styling
 @import "./overrides/font";
 @import "./overrides/hr.scss";
