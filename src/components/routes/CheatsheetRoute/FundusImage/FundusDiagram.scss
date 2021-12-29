@@ -1,0 +1,17 @@
+@import "../../../../styles/utils/theme.scss";
+
+.fundus-diagram {
+    position:relative;
+    img {
+        width:100%;
+        height:100%;
+    }
+    svg {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+    }
+    &-marker {
+    }
+}

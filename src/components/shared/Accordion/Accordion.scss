@@ -1,0 +1,52 @@
+@import "../../../styles/utils/theme.scss";
+
+.accordion {
+    display:flex;
+    flex-wrap: wrap;
+    margin: 0 0.5rem;
+    svg {
+        height: none !important;
+    }
+    .accordion-header {
+        display:flex;
+        flex-basis: 0;
+        flex-grow: 1;
+        justify-content: center;
+        background-color: $primary;
+        color:$background;
+        padding:0.5rem;
+        transition: background-color 0.3s ease-in-out;
+        text-align: center;
+        &:hover {
+            cursor: pointer;
+            background-color: $primary-light;
+        }
+        h1 {
+            padding-right:4px;
+        }
+    }
+    .accordion-content {
+        background-color:$grey-fade;
+        width:100%;
+        .accordion-body {
+            padding: 1rem;
+        }
+        height:0px;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+
+    }
+    .dropdown-arrow path {
+        fill: $background;
+        stroke: $background;
+        
+    }
+    &.is-open {
+        .dropdown-arrow {
+            transform:rotate(180deg);
+        }
+        .accordion-content {
+            height:auto;
+        }
+    }
+}

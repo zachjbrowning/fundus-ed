@@ -10,12 +10,29 @@ import DeadImg from "../../static/fundi/DEAD.jpg"
 
 export const normalConfig: FundiConfig = {
     name: "normal eye",
-    imgs: [{
-        src: normal1,
-        alt: "nomral fundus"
-    }],
+    imgs: [
+        {
+            src: normal1,
+            alt: "nomral fundus",
+            description: "This is a normal eye homie, nothin to see here",
+            markers: [
+                {
+                    x: 50,
+                    y: 50,
+                    radius: 0,
+                    description: "haha uhh the center of the image"
+                },
+                {
+                    x: 82,
+                    y: 50,
+                    radius: 4,
+                    description: "some weird thing on the side"
+                }
+            ]
+        }
+    ],
     management: "not necessary",
-    description: "Normal eyes pretty much like every other eye you've ever seen to be honest"
+    overview: "Normal eyes pretty much like every other eye you've ever seen to be honest"
 }
 
 export const papConfig: FundiConfig = {
@@ -23,15 +40,57 @@ export const papConfig: FundiConfig = {
     imgs: [
         {
             src: pap1,
-            alt: "pap fundus"
+            alt: "pap fundus",
+            description: "*speaks russian*",
+            markers: [
+                {
+                    x: 20,
+                    y: 20,
+                    radius: 4,
+                    description: "cheees gromit"
+                },
+                {
+                    x: 35,
+                    y: 62,
+                    radius: 0,
+                    description: "gorgonzola"
+                },
+                {
+                    x: 88,
+                    y: 65,
+                    radius: 7,
+                    description: "blue"
+                }
+            ]
         },
         {
             src: pap2,
-            alt: "pap fundus"
+            alt: "pap fundus",
+            description: "Oh hell no",
+            markers: [
+                {
+                    x: 40,
+                    y: 80,
+                    radius: 0,
+                    description: "eshay"
+                },
+                {
+                    x: 20,
+                    y: 20,
+                    radius: 0,
+                    description: "brah"
+                },
+                {
+                    x: 50,
+                    y: 10,
+                    radius: 5,
+                    description: "steel ya freshies"
+                }
+            ]
         }
     ],
     management: "eat a smoked oyster",
-    description: "Think the lungs of a smoker, but the eyes. Bit red round the edges but nothing too terrible."
+    overview: "Think the lungs of a smoker, but the eyes. Bit red round the edges but nothing too terrible."
 }
 
 export const retConfig: FundiConfig = {
@@ -39,33 +98,11 @@ export const retConfig: FundiConfig = {
     imgs: [
         {
             src: ret1,
-            alt: "worse fundus"
+            alt: "worse fundus",
+            description: "\'AAADDRIAAAANNNNNNN\'",
+            markers: []
         }
     ],
     management: "see a chiropractor",
-    description: "I reckon jaundice falls under the worse eye category. Essentially if aint the colour it shouldn't be, something aint right."
-}
-
-export const deadConfig: FundiConfig = {
-    name: "dead eye",
-    imgs: [
-        {
-            src: DeadImg,
-            alt: "dead fundus"
-        },
-        {
-            src: WorseImg,
-            alt: "also dead?"
-        },
-        {
-            src: BadImg,
-            alt: "also dead?"
-        },
-        {
-            src: NormalImg,
-            alt: "also dead?"
-        }
-    ],
-    management: "Start digging ya grave",
-    description: "If you can't diagnose this, you're a terrible doctor. They're literally dead like comeion> IM adding more words because I want it to overflo pleeease"
+    overview: "I reckon jaundice falls under the worse eye category. Essentially if aint the colour it shouldn't be, something aint right."
 }

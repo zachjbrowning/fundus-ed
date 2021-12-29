@@ -1,36 +1,18 @@
 @import "../../../../styles/utils/theme.scss";
 
 .fundus-tile {
-    height: 100vh;
     border: 1px solid $primary-light;
     scroll-snap-align: center;
-    &-title {
-        height:10%;
-        display:flex;
-        width:100%;
-    }
-    &-img {
-        height:60%;
-        img {
-            height:100%;
-            display:flex;
-        }
-    }
-    &-info {
-        div {
-            width:100%;
-            display:flex;
-            justify-content: center;
-        }
-        height:30%;
-        p {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical; 
-            overflow: hidden;
-        }
-    }
-    & > div {
+    padding: 1rem;
+    overflow: hidden;
+    position: relative;
+    &-carousel {
         padding: 1rem;
+    }
+    &-read-more {
+        width:100%;
+        button {
+            width:100%;
+        }
     }
 }

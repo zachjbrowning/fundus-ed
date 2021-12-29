@@ -1,14 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { img } from '../../../../constants/fundi/fundi';
+import { FundusImage } from '../../../../constants/fundi/fundi';
 
 import './LandingTile.scss';
 
 export interface TileProps {
     title: string;
     msg: string;
-    img: img;
+    img: TileImage;
     route: string;
+}
+
+interface TileImage {
+    src: string;
+    alt: string;
 }
 
 export const LandingTile = (props: TileProps) => {

@@ -1,0 +1,9 @@
+.fundus-tabs {
+    &-description {
+        li {
+            &:hover {
+                font-weight: 600;
+            }
+        }
+    } 
+}

@@ -8,16 +8,16 @@ import { routes } from './constants/routes';
 import "./styles/index.scss"
 import "./App.scss"
 import CheatsheetRoute from './components/routes/CheatsheetRoute/CheatsheetRoute';
-import FloatingNav from './components/shared/FloatingNav/FloatingNav';
 import store from './redux/store';
 import { Provider } from 'react-redux';
+import Nav from './components/shared/Nav/Nav';
 
 export default function App() {
     return <Provider store={store}>
         <BrowserRouter>
             <Routes>
                 <Route path={routes.LANDING_ROUTE} element={<div />} />
-                <Route path={"*"} element={<FloatingNav />} />
+                <Route path={"*"} element={<Nav />} />
             </Routes>
             <Routes>
                 <Route path={routes.LANDING_ROUTE} element={<LandingRoute />} />

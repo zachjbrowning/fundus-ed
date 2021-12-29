@@ -1,22 +1,39 @@
-import { deadConfig, normalConfig, papConfig, retConfig } from "./configs";
+import { normalConfig, papConfig, retConfig } from "./configs";
+
+export const colours = [
+    '#ffca3a',
+    '#8ac926',
+    '#1982c4',
+    '#6a4c93',
+    '#78E0DC',
+    '#B084CC'
+]
 
 export enum FUNDI {
     normal = "NORMAL",
     pap = "PAP",
     ret = "RET",
-    dead = "DEAD"
 }
 
-export interface img {
+export interface FundusImage {
     src: string;
     alt: string;
+    description: string;
+    markers: ImageMarker[];
+}
+
+export interface ImageMarker {
+    x: number;
+    y: number;
+    description: string;
+    radius: number;
 }
 
 export interface FundiConfig {
     name: string;
-    imgs: img[];
+    imgs: FundusImage[];
     management: string;
-    description: string;
+    overview: string;
 }
 
 export const fundiConfigs: {
@@ -24,8 +41,7 @@ export const fundiConfigs: {
 } = {
     NORMAL: normalConfig,
     PAP: papConfig,
-    RET: retConfig,
-    DEAD: deadConfig
+    RET: retConfig
 }
 
 

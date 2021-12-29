@@ -1,14 +1,18 @@
 @import "../../../../styles/utils/theme.scss";
 .fundus-page {
-    position:absolute;
+    width: 100%;
     padding: 0.5rem;
-    top:0;
-    left:0;
-    right:0;
-    width:100%;
-    height:100vh;
     background-color: $background;
-    overflow: scroll;
+    overflow: hidden;
+    height:100%;
+    &.is-open {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        height:100vh;
+        overflow: scroll;
+    }
 }
 .fundus-page-closer {
     margin: 1rem;
