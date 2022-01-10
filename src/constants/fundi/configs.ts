@@ -1,4 +1,6 @@
 import { FundiConfig } from "./fundi";
+
+// Import any images that we want to use form the static folder
 import normal1 from "../../static/fundi/normal-1.jpg"
 import pap1 from "../../static/fundi/papilloedema-1.png"
 import pap2 from "../../static/fundi/papilloedema-2.png"
