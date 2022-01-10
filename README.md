@@ -1,6 +1,9 @@
 # fundus-ed
 SPA for fundus.education website
 
+## Running the code
+Inside the terminal, type the command `yarn start`. This will run the code, and you can find the website in your browser at `localhost:8080`. When you want to stop the server, type `ctrl + C` in the terminal. The website will hot reload every time you change a file.
+
 ## The files that matter
 
 Where we'll be working:
