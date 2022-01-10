@@ -20,13 +20,12 @@ Hopefully that makes sense. We define our configurations in some ugly way with a
 
 ## Adding a fundus: Papilloedema
 
-1. Inside the `config.ts` file, we want to define a new configuration. Lets do this by writing:
+1. Inside the `config.ts` file, we want to define a new configuration. We are defining a constant (const) that is visible by all the code (export), giving it some arbritary name (papConfig - it really doesn't matter what it is called though), and we have given it a type (FundiConfig). Giving it the type is really important, because now if we don't stick to the strict type rules we defined earlier, we'll get an error. 
 ```
 export const papConfig: FundiConfig = {
 
 }
 ```
-    We are defining a constant (const) that is visible by all the code (export), giving it some arbritary name (papConfig - it really doesn't matter what it is called though), and we have given it a type (FundiConfig). Giving it the type is really important, because now if we don't stick to the strict type rules we defined earlier, we'll get an error. 
 2. Back inside the `fundi.ts` file, we now need to register that new configuration so that our website knows it exists. First off, we're going to give our configuration a nickname (again, name doesn't matter too much, its just the name the code uses to reference the configs). 
 ```
 export enum FUNDI {
@@ -46,4 +45,8 @@ export const fundiConfigs: {
     ...
 }
 ```
-4. We have now made a new config and registered with the code. Now we just actually need to fill out that configuration. Back to the `config.ts` file, there might be some red squiggly lines telling us that there are some errors. That is because our configuration doesn't match the 'type' that we have declared it must match. Looking in the `fundi.ts` file, we can see that the `FundiConfig` type needs a name, a list of FundusImages, a sentence for management and a sentence for overview. You will then see that a FundusImage has it's own type, it requires a src (reference to the image) an alt (quick description of the image incase it doesn't load), a description sentence and a list of marker. The markers have their own type defined as well! Down the rabbit hole we go, blah blah blah. Honestly, just copy from the preixisting samples, ask any questions when necessary and hopefully it starts to makes sense with practice. 
+4. We have now made a new config and registered with the code. Now we just actually need to fill out that configuration. Back to the `config.ts` file, there might be some red squiggly lines telling us that there are some errors. That is because our configuration doesn't match the 'type' that we have declared it must match. Looking in the `fundi.ts` file, we can see that the `FundiConfig` type needs a name, a list of FundusImages, a sentence for management and a sentence for overview. 
+
+You will then see that a FundusImage has it's own type, it requires a src (reference to the image) an alt (quick description of the image incase it doesn't load), a description sentence and a list of marker. The markers have their own type defined as well! 
+
+Down the rabbit hole we go, blah blah blah. Honestly, just copy from the preixisting samples, ask any questions when necessary and hopefully it starts to makes sense with practice. 
