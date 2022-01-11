@@ -1,14 +1,10 @@
 import { FundiConfig } from "./fundi";
 
 // Import any images that we want to use form the static folder
-import normal1 from "../../static/fundi/normal-1.jpg"
-import pap1 from "../../static/fundi/papilloedema-1.png"
-import pap2 from "../../static/fundi/papilloedema-2.png"
-import ret1 from "../../static/fundi/hypertensive-retinopathy-1.png"
-import NormalImg from "../../static/fundi/NORMAL.jpg"
-import BadImg from "../../static/fundi/BAD.jpg"
-import WorseImg from "../../static/fundi/WORSE.jpg"
-import DeadImg from "../../static/fundi/DEAD.jpg"
+import normal1 from "./images/normal-1.jpg"
+import pap1 from "./images/papilloedema-1.png"
+import pap2 from "./images/papilloedema-2.png"
+import ret1 from "./images/hypertensive-retinopathy-1.png"
 
 export const normalConfig: FundiConfig = {
     name: "normal eye",

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { routes } from '../../../constants/routes';
 import './LandingRoute.scss';
 import LandingTile, { TileProps } from './LandingTile/LandingTile';
-import TestImg from "../../../static/fundi/normal-1.jpg"
+import TestImg from "../../../constants/fundi/images/normal-1.jpg"
 
 const tiles: TileProps[] = [
     {

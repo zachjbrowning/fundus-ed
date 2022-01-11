@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --config webpack.config.js --progress --color --mode development",
-    "build": "rm -r dist; mkdir dist; webpack --mode production --config webpack.config.js"
+    "build": "rm -r dist; rm -r docs; mkdir dist; mkdir docs; webpack --mode production --config webpack.config.js; cp -r dist/. docs"
   },
   "dependencies": {
     "@types/react": "^17.0.38",
